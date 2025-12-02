@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle config set --local auto_install true)",
+      "Bash(bundle install)",
+      "Bash(bin/rails routes)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

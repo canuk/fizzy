@@ -2,12 +2,12 @@
 service: fizzy
 
 # Name of the container image (use your-user/app-name on external registries).
-image: fizzy
+image: canuk/fizzy
 
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    - 165.232.50.216
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -20,21 +20,21 @@ servers:
 #
 # Don't use this when deploying to multiple web servers (then you have to terminate SSL at your load balancer).
 #
-# proxy:
-#   ssl: true
-#   host: app.example.com
+proxy:
+  ssl: true
+  host: fizzy.resistapathy.com
 
 # Where you keep your container images.
 registry:
   # Alternatives: hub.docker.com / registry.digitalocean.com / ghcr.io / ...
-  server: localhost:5555
+  server: ghcr.io
 
   # Needed for authenticated registries.
-  # username: your-user
+  username: canuk
 
   # Always use an access token rather than real password when possible.
-  # password:
-  #   - KAMAL_REGISTRY_PASSWORD
+  password:
+    - KAMAL_REGISTRY_PASSWORD
 
 # Inject ENV variables into containers (secrets come from .kamal/secrets).
 env:
