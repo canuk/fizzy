@@ -36,3 +36,8 @@ production:
     <<: *default
     database: storage/production_cache.sqlite3
     migrations_paths: db/cache_migrate
+  queue:
+    <<: *default
+    database: storage/production_queue.sqlite3
+    migrations_paths: db/queue_migrate
+    schema_dump: db/queue_schema.rb
